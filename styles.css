@@ -255,6 +255,7 @@ a{ color:inherit; }
 .chip-name{ font-weight:600; font-size:.9rem; }
 .chip-tag{ font-family:var(--font-mono); font-size:.7rem; color:var(--gold-soft); }
 .formula-teaser-note{ margin-top:2rem; color:var(--muted); font-size:.92rem; max-width:560px; }
+.formula-teaser-inner .btn-whatsapp{ margin-top:2rem; }
 @media (max-width:760px){ .ingredient-grid{ grid-template-columns:repeat(2,1fr); } }
 
 /* ================= PACKAGING ================= */
