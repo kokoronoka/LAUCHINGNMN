@@ -18,6 +18,7 @@
   --white: #f7f4fb;
   --muted: #b7abc9;
   --faint: #7a6e8f;
+  --error: #ff6b8a;
 
   --ease-out: cubic-bezier(.16,1,.3,1);
   --ease-spring: cubic-bezier(.34,1.56,.64,1);
@@ -334,3 +335,86 @@ a{ color:inherit; }
   .sticky-bar{ display:flex; }
   .footer{ padding-bottom:14vh; }
 }
+
+/* ================= REGISTRATION MODAL ================= */
+body.modal-open{ overflow:hidden; }
+body.modal-open .sticky-bar{ display:none !important; }
+body.modal-open .wa-float{ display:none !important; }
+
+.reg-modal{
+  position:fixed; inset:0; z-index:400;
+  display:flex; align-items:center; justify-content:center;
+  padding:5vh 5vw;
+  visibility:hidden; opacity:0; pointer-events:none;
+  transition:opacity .3s var(--ease-out), visibility .3s;
+}
+.reg-modal.is-open{ visibility:visible; opacity:1; pointer-events:auto; }
+
+.reg-modal-backdrop{
+  position:absolute; inset:0;
+  background:rgba(5,1,6,.82); backdrop-filter:blur(4px);
+}
+
+.reg-modal-dialog{
+  position:relative; z-index:1; width:min(460px,100%); max-height:90vh; overflow-y:auto;
+  background:linear-gradient(155deg, var(--panel-dark), var(--panel-darker));
+  border:1px solid rgba(196,166,255,.18); border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.02) inset;
+  padding:2.6rem 2.2rem; text-align:left;
+  transform:translateY(16px) scale(.98);
+  transition:transform .3s var(--ease-spring);
+}
+.reg-modal.is-open .reg-modal-dialog{ transform:translateY(0) scale(1); }
+
+.reg-modal-close{
+  position:absolute; top:1.1rem; right:1.1rem; z-index:2;
+  width:36px; height:36px; display:flex; align-items:center; justify-content:center;
+  border-radius:999px; background:rgba(196,166,255,.08); color:var(--muted);
+  transition:background .2s, color .2s;
+}
+.reg-modal-close:hover{ background:rgba(196,166,255,.16); color:var(--white); }
+.reg-modal-close svg{ width:16px; height:16px; }
+
+.reg-modal-title{ font-size:clamp(1.5rem,3vw,1.9rem); font-weight:700; letter-spacing:-0.02em; margin:.6rem 0 .6rem; padding-right:2rem; }
+.reg-modal-sub{ color:var(--muted); font-size:.92rem; line-height:1.6; margin-bottom:1.8rem; max-width:400px; }
+
+.reg-form{ display:flex; flex-direction:column; gap:1.2rem; }
+.reg-field{ display:flex; flex-direction:column; gap:.4rem; }
+.reg-field label{ font-family:var(--font-mono); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+.reg-field input, .reg-field select{
+  background:rgba(255,255,255,.04); border:1px solid rgba(196,166,255,.2); border-radius:10px;
+  padding:.85rem 1rem; color:var(--white); font-size:.95rem; font-family:inherit;
+  transition:border-color .2s, background .2s;
+}
+.reg-field input:focus, .reg-field select:focus{ border-color:var(--purple-400); background:rgba(255,255,255,.06); }
+.reg-field.has-error input{ border-color:var(--error); }
+
+.reg-phone-row{ display:flex; gap:.6rem; }
+.reg-phone-row select{ flex:0 0 auto; width:6.8rem; color-scheme:dark; }
+.reg-phone-row input{ flex:1 1 auto; min-width:0; }
+.reg-hint{ font-size:.72rem; color:var(--faint); }
+.reg-error{ font-size:.78rem; color:var(--error); min-height:1em; }
+
+.reg-form-error{
+  font-size:.85rem; color:var(--error);
+  background:rgba(255,107,138,.08); border:1px solid rgba(255,107,138,.25);
+  border-radius:10px; padding:.75rem 1rem;
+}
+
+.reg-submit{ position:relative; width:100%; text-align:center; margin-top:.4rem; border:none; }
+.reg-submit.is-loading{ color:transparent; pointer-events:none; }
+.reg-submit.is-loading::after{
+  content:""; position:absolute; top:50%; left:50%; width:18px; height:18px; margin:-9px 0 0 -9px;
+  border:2px solid rgba(5,1,6,.35); border-top-color:var(--black); border-radius:50%;
+  animation:reg-spin .7s linear infinite;
+}
+@keyframes reg-spin{ to{ transform:rotate(360deg); } }
+
+@media (max-width:480px){
+  .reg-modal{ padding:0; align-items:flex-end; }
+  .reg-modal-dialog{ width:100%; max-height:92vh; border-radius:20px 20px 0 0; padding:2.2rem 1.5rem 2rem; }
+}
+
+/* ================= THANK YOU PAGE ================= */
+.ty-recap-note{ font-size:.85rem; color:var(--muted); line-height:1.6; }
+.ty-reassurance{ margin-top:2.4rem; color:var(--muted); font-size:.92rem; max-width:480px; }
