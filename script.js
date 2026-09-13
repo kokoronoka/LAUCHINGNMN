@@ -1,12 +1,13 @@
 (() => {
   'use strict';
 
-  // -------- countdown to launch: 06 Sep 2026, 20:00 Malaysia time (UTC+8) --------
-  const LAUNCH_DATE = new Date('2026-09-06T20:00:00+08:00').getTime();
+  // -------- countdown to launch: 24 Sep 2026, 20:00 Malaysia time (UTC+8) --------
+  const LAUNCH_DATE = new Date('2026-09-24T20:00:00+08:00').getTime();
 
   const targets = [
     { d: 'cdDays', h: 'cdHours', m: 'cdMinutes', s: 'cdSeconds' },
-    { d: 'cdDaysFinal', h: 'cdHoursFinal', m: 'cdMinutesFinal', s: 'cdSecondsFinal' }
+    { d: 'cdDaysFinal', h: 'cdHoursFinal', m: 'cdMinutesFinal', s: 'cdSecondsFinal' },
+    { d: 'cdDaysClose', h: 'cdHoursClose', m: 'cdMinutesClose', s: 'cdSecondsClose' }
   ];
 
   function pad(n) { return String(n).padStart(2, '0'); }
