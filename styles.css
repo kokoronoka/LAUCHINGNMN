@@ -209,16 +209,21 @@ a{ color:inherit; }
 /* ================= TURNING POINT ================= */
 .turning-inner{ max-width:1100px; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
 .turning-headline{ text-align:center; max-width:700px; }
-.turning-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; width:100%; margin-top:1rem; }
+.turning-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.4rem; width:100%; margin-top:1rem; }
 .turning-card{
   background:rgba(123,63,228,.06); border:1px solid rgba(196,166,255,.14); border-radius:18px;
   padding:2rem 1.6rem; text-align:center;
+  flex:1 1 300px; max-width:340px;
 }
 .turning-icon{
   display:block; width:100%; max-width:220px; aspect-ratio:1/1; object-fit:cover;
   border-radius:14px; margin:0 auto 1.2rem;
   border:1px solid rgba(196,166,255,.16);
   box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+.turning-icon-emoji{
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(123,63,228,.1); font-size:3.4rem;
 }
 .turning-card h3{ font-size:1.05rem; font-weight:700; line-height:1.4; margin-bottom:.8rem; color:var(--white); }
 .turning-card p{ color:var(--muted); font-size:.88rem; line-height:1.65; }
@@ -227,7 +232,7 @@ a{ color:inherit; }
   color:var(--muted); font-size:1.02rem; line-height:1.7; font-style:italic;
 }
 .turning-note em{ color:var(--gold-soft); font-style:italic; }
-@media (max-width:900px){ .turning-grid{ grid-template-columns:1fr; } }
+@media (max-width:900px){ .turning-card{ flex-basis:100%; max-width:420px; } }
 
 /* ================= WHAT YOU'LL LEARN ================= */
 .learn-inner{ max-width:820px; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
@@ -606,6 +611,7 @@ body.modal-open .wa-float{ display:none !important; }
   background:rgba(255,255,255,.04); border:1px solid rgba(196,166,255,.2); border-radius:10px;
   padding:.85rem 1rem; color:var(--white); font-size:.95rem; font-family:inherit;
   transition:border-color .2s, background .2s;
+  color-scheme:dark;
 }
 .reg-field input:focus, .reg-field select:focus{ border-color:var(--purple-400); background:rgba(255,255,255,.06); }
 .reg-field.has-error input{ border-color:var(--error); }

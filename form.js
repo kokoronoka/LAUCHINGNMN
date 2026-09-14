@@ -4,7 +4,7 @@
   // TODO: after deploying apps-script.gs as a Web App (Deploy > New deployment >
   // type "Web app" > execute as yourself > who has access "Anyone"), paste the
   // resulting URL here. See apps-script.gs for the matching doPost(e) handler.
-  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbzED6h4lc36BCPKf3aNKfJbxqh2-72dwz3XCV_EVN9EOpzBaNnkd9FzFGFFzmdw7SEVWg/exec";
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKCd50FXMADz7j1Bv075xOqhcMGbeRqG4oDeJk9QgJcWoofzfiQq6eTGPqXxkxhX13ag/exec";
 
   const modal = document.getElementById('regModal');
   if (!modal) return;
@@ -22,6 +22,7 @@
     email: { input: document.getElementById('regEmail'), error: document.getElementById('regEmailError') }
   };
   const countryCode = document.getElementById('regCountryCode');
+  const language = document.getElementById('regLanguage');
 
   let lastFocusedTrigger = null;
 
@@ -172,6 +173,7 @@
       name: fields.name.input.value.trim(),
       phone: `${countryCode.value} ${fields.phone.input.value.trim()}`,
       email: fields.email.input.value.trim(),
+      language: language.value,
       timestamp: new Date().toISOString()
     });
 
