@@ -115,17 +115,6 @@ a{ color:inherit; }
 .hero-headline{ font-size:clamp(1.9rem,4.4vw,3.4rem); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:1.2rem; }
 .hero-headline span{ display:block; }
 .hero-flag{ color:var(--error); font-weight:800; text-decoration-color:rgba(255,107,138,.55); text-decoration-thickness:3px; text-underline-offset:6px; }
-.hero-pop{ display:inline-block; }
-.reveal.in-view .hero-pop.delay-a{ animation:heroPop 2.6s var(--ease-spring) .5s infinite; }
-.reveal.in-view .hero-pop.delay-b{ animation:heroPop 2.6s var(--ease-spring) .95s infinite; }
-@keyframes heroPop{
-  0%{ transform:scale(1); }
-  8%{ transform:scale(1.22); }
-  16%{ transform:scale(.93); }
-  22%{ transform:scale(1.06); }
-  28%{ transform:scale(1); }
-  100%{ transform:scale(1); }
-}
 .hero-sub{ font-size:clamp(1.1rem,2vw,1.45rem); font-style:italic; color:var(--purple-300); line-height:1.5; margin-bottom:.8rem; }
 .hero-lead{ font-size:.95rem; color:var(--muted); max-width:520px; line-height:1.65; margin-bottom:2.2rem; }
 .hero-lead strong{ color:var(--gold-soft); }
