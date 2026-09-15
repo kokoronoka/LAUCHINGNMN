@@ -114,7 +114,7 @@ a{ color:inherit; }
 .hero-mark{ font-family:var(--font-mono); font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-soft); margin-bottom:1.4rem; }
 .hero-headline{ font-size:clamp(1.9rem,4.4vw,3.4rem); font-weight:700; line-height:1.2; letter-spacing:-0.02em; margin-bottom:1.2rem; }
 .hero-headline span{ display:block; }
-.hero-flag{ color:var(--error); font-weight:800; text-decoration-color:rgba(255,107,138,.55); text-decoration-thickness:3px; text-underline-offset:6px; }
+.hero-flag{ color:var(--gold-soft); font-weight:800; text-decoration-color:rgba(212,175,106,.55); text-decoration-thickness:3px; text-underline-offset:6px; }
 .hero-sub{ font-size:clamp(1.1rem,2vw,1.45rem); font-style:italic; color:var(--purple-300); line-height:1.5; margin-bottom:.8rem; }
 .hero-lead{ font-size:.95rem; color:var(--muted); max-width:520px; line-height:1.65; margin-bottom:2.2rem; }
 .hero-lead strong{ color:var(--gold-soft); }
@@ -122,13 +122,13 @@ a{ color:inherit; }
 .hero-speakers{ position:relative; width:min(100%,520px); margin:0; border-radius:22px; overflow:hidden; border:1px solid rgba(196,166,255,.18); box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(123,63,228,.18); }
 .hero-speakers img{ width:100%; aspect-ratio:1080/904; object-fit:cover; }
 .speaker-tag{
-  position:absolute; bottom:1rem; display:flex; flex-direction:column; gap:.15rem; text-align:left;
-  padding:.55rem .85rem; border-radius:12px;
+  position:absolute; bottom:1rem; display:flex; flex-direction:column; gap:.2rem; text-align:left;
+  padding:.55rem .85rem; border-radius:12px; max-width:46%; box-sizing:border-box;
   background:rgba(5,1,6,.72); backdrop-filter:blur(6px);
   border:1px solid rgba(212,175,106,.35);
 }
-.speaker-tag strong{ font-size:.85rem; color:var(--white); }
-.speaker-tag span{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--gold-soft); }
+.speaker-tag strong{ font-size:.85rem; color:var(--white); line-height:1.25; }
+.speaker-tag span{ font-family:var(--font-mono); font-size:.6rem; letter-spacing:.05em; text-transform:uppercase; color:var(--gold-soft); line-height:1.4; }
 .speaker-tag-left{ left:1rem; }
 .speaker-tag-right{ right:1rem; text-align:right; }
 
@@ -144,10 +144,11 @@ a{ color:inherit; }
 .hero-countdown .countdown-grid{ gap:1.4rem; justify-content:center; }
 .hero-countdown .countdown-value{ font-size:1.8rem; }
 @media (max-width:560px){
-  .speaker-tag{ bottom:.6rem; padding:.4rem .6rem; }
+  .speaker-tag{ bottom:.6rem; padding:.4rem .6rem; max-width:48%; }
   .speaker-tag-left{ left:.6rem; }
   .speaker-tag-right{ right:.6rem; }
-  .speaker-tag strong{ font-size:.75rem; }
+  .speaker-tag strong{ font-size:.72rem; }
+  .speaker-tag span{ font-size:.52rem; }
 }
 
 .countdown-grid{ display:flex; gap:.6rem; }
