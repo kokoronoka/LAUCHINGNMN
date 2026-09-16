@@ -36,6 +36,7 @@ html,body{
   overflow-x:hidden;
 }
 img{ display:block; max-width:100%; }
+[hidden]{ display:none !important; }
 button{ font-family:inherit; border:none; background:none; color:inherit; cursor:pointer; }
 em{ font-style:italic; color:var(--purple-300); }
 a{ color:inherit; }
@@ -121,6 +122,9 @@ a{ color:inherit; }
 
 .hero-speakers{ position:relative; width:min(100%,520px); margin:0; border-radius:22px; overflow:hidden; border:1px solid rgba(196,166,255,.18); box-shadow:0 30px 80px rgba(0,0,0,.55), 0 0 60px rgba(123,63,228,.18); }
 .hero-speakers img{ width:100%; aspect-ratio:1080/904; object-fit:cover; }
+.hero-speakers-solo{ width:min(100%,400px); }
+.hero-speakers .hero-speaker-solo{ aspect-ratio:4/5; object-position:center top; }
+.hero-speakers-solo .speaker-tag{ max-width:calc(100% - 2rem); }
 .speaker-tag{
   position:absolute; bottom:1rem; display:flex; flex-direction:column; gap:.2rem; text-align:left;
   padding:.55rem .85rem; border-radius:12px; max-width:46%; box-sizing:border-box;
