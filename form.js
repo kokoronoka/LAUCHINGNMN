@@ -4,7 +4,7 @@
   // TODO: after deploying apps-script.gs as a Web App (Deploy > New deployment >
   // type "Web app" > execute as yourself > who has access "Anyone"), paste the
   // resulting URL here. See apps-script.gs for the matching doPost(e) handler.
-  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbwKCd50FXMADz7j1Bv075xOqhcMGbeRqG4oDeJk9QgJcWoofzfiQq6eTGPqXxkxhX13ag/exec";
+  const SHEET_ENDPOINT = "https://script.google.com/macros/s/AKfycbxRepPuerCdgvRXxXqrzXeaKMYIOC96gu-2Zr8jBnYk3aGI0qCvdDuIO755les2atZcTA/exec";
 
   const modal = document.getElementById('regModal');
   if (!modal) return;
@@ -19,10 +19,10 @@
   const fields = {
     name: { input: document.getElementById('regName'), error: document.getElementById('regNameError') },
     phone: { input: document.getElementById('regPhone'), error: document.getElementById('regPhoneError') },
-    email: { input: document.getElementById('regEmail'), error: document.getElementById('regEmailError') }
+    email: { input: document.getElementById('regEmail'), error: document.getElementById('regEmailError') },
+    location: { input: document.getElementById('regLocation'), error: document.getElementById('regLocationError') }
   };
   const countryCode = document.getElementById('regCountryCode');
-  const language = document.getElementById('regLanguage');
 
   let lastFocusedTrigger = null;
 
@@ -122,6 +122,12 @@
       return true;
     }
 
+    if (key === 'location') {
+      if (!value) { setFieldError('location', 'Please select your location.'); return false; }
+      setFieldError('location', '');
+      return true;
+    }
+
     return true;
   }
 
@@ -154,8 +160,9 @@
     const validName = validateField('name');
     const validPhone = validateField('phone');
     const validEmail = validateField('email');
-    if (!validName || !validPhone || !validEmail) {
-      const firstInvalidKey = ['name', 'phone', 'email'].find(
+    const validLocation = validateField('location');
+    if (!validName || !validPhone || !validEmail || !validLocation) {
+      const firstInvalidKey = ['name', 'phone', 'email', 'location'].find(
         key => fields[key].input.closest('.reg-field').classList.contains('has-error')
       );
       if (firstInvalidKey) fields[firstInvalidKey].input.focus();
@@ -173,7 +180,7 @@
       name: fields.name.input.value.trim(),
       phone: `${countryCode.value} ${fields.phone.input.value.trim()}`,
       email: fields.email.input.value.trim(),
-      language: language.value,
+      location: fields.location.input.value,
       timestamp: new Date().toISOString()
     });
 

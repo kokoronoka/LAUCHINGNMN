@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ZÉLL-V NMN Plus — Live Launch Event</title>
 <meta name="description" content="Join the live launch of ZÉLL-V NMN Plus — the Swiss four-ingredient longevity formula. Reserve your seat in the WhatsApp community before the countdown ends.">
-<link rel="stylesheet" href="styles.css?v=19">
+<link rel="stylesheet" href="styles.css?v=25">
 
 <!-- Meta Pixel Code -->
 <script>
@@ -34,16 +34,23 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
   </div>
   <div class="hero-scrim" aria-hidden="true"></div>
 
-  <div class="hero-inner">
+  <div class="hero-inner hero-split">
+    <div class="hero-top">
     <p class="hero-mark reveal">Free Live Webinar</p>
     <h1 class="hero-headline reveal delay-1">
-      <span>95% of people <u class="hero-flag">don't know</u> —</span>
+      <span>95% of people <u class="hero-flag">don't know</u>&nbsp;— </span>
       <span>feeling tired and worn out with age <u class="hero-flag">isn't normal</u></span>
     </h1>
     <p class="hero-sub reveal delay-2">It may be your cells calling for help.</p>
     <p class="hero-lead reveal delay-2">Learn how to <strong>reawaken your cells</strong> — more energy, deeper sleep, and a younger you from within.</p>
+    </div>
 
-    <figure class="hero-speakers hero-speakers-solo reveal delay-3">
+    <figure class="hero-poster reveal delay-2">
+      <img src="images/newHeroImage.jpg" alt="Today the wait is over — discover the birth of ZÉLL-V NMN Plus live and step into your new chapter of healthy longevity">
+    </figure>
+
+    <div class="hero-bottom">
+    <figure class="hero-speakers hero-speakers-solo reveal delay-3" hidden>
       <img src="images/duoSpeaker.jpg" alt="Foong Zhi Yang and Siew Wei, ZÉLL-V webinar speakers" hidden>
       <img class="hero-speaker-solo" src="images/siewWei.jpg" alt="Ee Siew Wei, ZÉLL-V webinar speaker">
       <figcaption class="speaker-tag speaker-tag-left" hidden>
@@ -75,6 +82,7 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
         <div class="countdown-unit"><strong class="countdown-value" id="cdMinutes">00</strong><span class="countdown-label">Min</span></div>
         <div class="countdown-unit"><strong class="countdown-value" id="cdSeconds">00</strong><span class="countdown-label">Sec</span></div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -318,9 +326,9 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
   <div class="speaker-list-inner">
     <h2 class="t-headline speaker-headline reveal">Meet Your Speakers</h2>
 
-    <div class="speaker-inner" hidden>
+    <div class="speaker-inner">
       <div class="speaker-img-wrap reveal">
-        <img src="images/zhiYang.jpg" alt="Zhi Yang, ZÉLL-V International Business Development">
+        <img src="images/zhiYang-cutout.png" alt="Foong Zhi Yang, International Business &amp; Longevity Strategist">
       </div>
       <div class="speaker-text">
         <p class="t-eyebrow reveal delay-1">Meet</p>
@@ -335,7 +343,7 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
 
     <div class="speaker-inner speaker-inner-reverse">
       <div class="speaker-img-wrap reveal">
-        <img src="images/siewWei.jpg" alt="Siew Wei, ZÉLL-V Cellular Health Consultant">
+        <img src="images/siewWei-cutout.png" alt="Ee Siew Wei, Cellular Health &amp; Longevity Consultant">
       </div>
       <div class="speaker-text">
         <p class="t-eyebrow reveal delay-1">Meet</p>
@@ -489,7 +497,7 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
 
     <button type="button" class="btn-primary btn-primary-large reveal delay-3" data-open-register>Reserve My Free Seat</button>
 
-    <p class="invite-signoff reveal delay-4">"See you in class."<br>— 黄菩觉 Alolikia Ong</p>
+    <p class="invite-signoff reveal delay-4">"See you in class."<br></p>
   </div>
 </section>
 
@@ -666,11 +674,17 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
         <span class="reg-error" id="regEmailError" role="alert"></span>
       </div>
       <div class="reg-field">
-        <label for="regLanguage">Webinar Language</label>
-        <select id="regLanguage" name="language" required>
-          <option value="English" selected style="background:#0d0714; color:#f7f4fb;">English</option>
-          <option value="Mandarin" style="background:#0d0714; color:#f7f4fb;">Mandarin</option>
+        <label for="regLocation">Location</label>
+        <select id="regLocation" name="location" required aria-describedby="regLocationError">
+          <option value="" disabled selected style="background:#0d0714; color:#7a6e8f;">Select your location</option>
+          <option value="Central (KL, Selangor, Putrajaya, Pahang)" style="background:#0d0714; color:#f7f4fb;">Central (KL, Selangor, Putrajaya, Pahang)</option>
+          <option value="Northern (Penang, Perak, Kedah, Perlis, Kelantan, Terengganu)" style="background:#0d0714; color:#f7f4fb;">Northern (Penang, Perak, Kedah, Perlis, Kelantan, Terengganu)</option>
+          <option value="Southern (Johor, Melaka, Negeri Sembilan)" style="background:#0d0714; color:#f7f4fb;">Southern (Johor, Melaka, Negeri Sembilan)</option>
+          <option value="East Malaysia (Sabah, Sarawak, Labuan)" style="background:#0d0714; color:#f7f4fb;">East Malaysia (Sabah, Sarawak, Labuan)</option>
+          <option value="Singapore" style="background:#0d0714; color:#f7f4fb;">Singapore</option>
+          <option value="Others" style="background:#0d0714; color:#f7f4fb;">Others</option>
         </select>
+        <span class="reg-error" id="regLocationError" role="alert"></span>
       </div>
 
       <p class="reg-form-error" id="regFormError" role="alert" hidden></p>
@@ -683,6 +697,6 @@ src="https://www.facebook.com/tr?id=937401189408284&ev=PageView&noscript=1"
 </div>
 
 <script src="script.js"></script>
-<script src="form.js"></script>
+<script src="form.js?v=3"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
  * 4. Copy the Web app URL from the deploy dialog.
  * 5. Paste that URL into the SHEET_ENDPOINT constant at the top of form.js.
  *
- * Each submission is appended as a row: [Timestamp, Name, Phone, Email, Language].
+ * Each submission is appended as a row: [Timestamp, Name, Phone, Email, Location].
  */
 
 function doPost(e) {
@@ -28,7 +28,7 @@ function doPost(e) {
       params.name || '',
       phone,
       params.email || '',
-      params.language || ''
+      params.location || ''
     ]);
 
     return ContentService
