@@ -124,22 +124,20 @@ a{ color:inherit; }
 .hero-speakers img{ width:100%; aspect-ratio:1080/904; object-fit:cover; }
 .hero-speakers-solo{ width:min(100%,400px); }
 
+/* Portrait hero: one centred column — headline, poster, then event details. */
 .hero-split{
-  max-width:1180px; display:grid; align-items:center; column-gap:clamp(2rem,5vw,4.5rem);
-  grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
-  grid-template-areas:"top poster" "bottom poster";
+  max-width:720px; display:flex; flex-direction:column; align-items:center; gap:1.8rem;
 }
-.hero-top{ grid-area:top; align-self:end; display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
-.hero-bottom{ grid-area:bottom; align-self:start; display:flex; flex-direction:column; align-items:flex-start; text-align:left; }
-.hero-split .hero-headline{ font-size:clamp(1.9rem,3.6vw,3.1rem); }
+.hero-top, .hero-bottom{ display:flex; flex-direction:column; align-items:center; text-align:center; width:100%; }
+.hero-split .hero-headline{ font-size:clamp(1.9rem,3.4vw,2.9rem); margin-bottom:1rem; }
 .hero-split .hero-headline span{ display:inline; }
 .hero-flag{ white-space:nowrap; }
 .hero-split .hero-lead{ margin-bottom:0; }
-.hero-split .hero-meta{ justify-content:flex-start; }
-.hero-split .hero-countdown .countdown-grid{ justify-content:flex-start; }
+.hero-split .hero-meta{ justify-content:center; margin-top:0; }
+.hero-split .hero-countdown .countdown-grid{ justify-content:center; }
 
 .hero-poster{
-  grid-area:poster; position:relative; margin:0; justify-self:center; width:min(100%,460px);
+  position:relative; margin:0; width:min(100%,420px);
   border-radius:20px; overflow:hidden; aspect-ratio:3/4;
   border:1px solid rgba(212,175,106,.45);
   box-shadow:0 40px 90px rgba(0,0,0,.6), 0 0 80px rgba(212,175,106,.18);
@@ -149,13 +147,6 @@ a{ color:inherit; }
   box-shadow:inset 0 0 0 1px rgba(255,236,200,.08);
 }
 .hero-poster img{ width:100%; height:100%; object-fit:cover; }
-
-@media (max-width:900px){
-  .hero-split{ grid-template-columns:1fr; grid-template-areas:"top" "poster" "bottom"; row-gap:2rem; }
-  .hero-top, .hero-bottom{ align-items:center; text-align:center; }
-  .hero-split .hero-meta, .hero-split .hero-countdown .countdown-grid{ justify-content:center; }
-  .hero-poster{ width:min(100%,420px); }
-}
 .hero-speakers .hero-speaker-solo{ aspect-ratio:4/5; object-position:center top; }
 .hero-speakers-solo .speaker-tag{ max-width:calc(100% - 2rem); }
 .speaker-tag{
