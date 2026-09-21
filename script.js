@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  // -------- countdown to launch: 24 Sep 2026, 20:00 Malaysia time (UTC+8) --------
-  const LAUNCH_DATE = new Date('2026-09-24T20:00:00+08:00').getTime();
+  // -------- countdown to launch: 1 Oct 2026, 20:00 Malaysia time (UTC+8) --------
+  const LAUNCH_DATE = new Date('2026-10-01T20:00:00+08:00').getTime();
 
   const targets = [
     { d: 'cdDays', h: 'cdHours', m: 'cdMinutes', s: 'cdSeconds' },
